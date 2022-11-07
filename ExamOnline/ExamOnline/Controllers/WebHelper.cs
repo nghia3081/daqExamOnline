@@ -27,8 +27,12 @@ namespace ExamOnline.Controllers
         public string SessionGet(string key)
         {
             var bytes = _session.Get(key);
-            if (bytes is null) return null;
+            if (bytes is null) return string.Empty;
             return Encoding.UTF8.GetString(bytes);
+        }
+        public void SessionRemove(string key)
+        {
+            if (_session.TryGetValue(key, out var value)) _session.Remove(key);
         }
     }
 }

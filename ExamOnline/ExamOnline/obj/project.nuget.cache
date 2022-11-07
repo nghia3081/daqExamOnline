@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qrh6dawyOW3orZEB7s2B+RwxwWyprW3Py5+6jw1NTCzyRnKZtzWYURaddY7BE0P/kz5qEg07gK0J3cbXo82WTQ==",
+  "dgSpecHash": "z4NhHXGMN15qXPEK0fS5Sow57k6VN7WFZMeQ9ejRMeoMVYNjnx6r1eaGV8Sb0k81TPnKdQo0uuCPYGZ4FV5bOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nhiep\\Music\\repos\\DAQ_ExamOnl\\ExamOnline\\ExamOnline\\ExamOnline.csproj",
+  "projectFilePath": "C:\\Users\\nhiep\\Music\\repos\\daqExamOnline\\ExamOnline\\ExamOnline\\ExamOnline.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nhiep\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\nhiep\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

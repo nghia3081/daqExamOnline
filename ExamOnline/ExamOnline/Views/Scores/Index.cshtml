@@ -19,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.Exam)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StudentNavigation)
+                @Html.DisplayNameFor(model => model.Student)
             </th>
             <th></th>
         </tr>
@@ -34,7 +34,7 @@
                 @Html.DisplayFor(modelItem => item.Exam.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.StudentNavigation.Email)
+                @Html.DisplayFor(modelItem => item.Student.Email)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

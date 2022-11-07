@@ -21,7 +21,7 @@ namespace ExamOnline.Controllers
         // GET: Scores
         public async Task<IActionResult> Index()
         {
-            var examOnlineContext = _context.Scores.Include(s => s.Exam).Include(s => s.StudentNavigation);
+            var examOnlineContext = _context.Scores.Include(s => s.Exam).Include(s => s.Student);
             return View(await examOnlineContext.ToListAsync());
         }
 
@@ -35,8 +35,8 @@ namespace ExamOnline.Controllers
 
             var score = await _context.Scores
                 .Include(s => s.Exam)
-                .Include(s => s.StudentNavigation)
-                .FirstOrDefaultAsync(m => m.Student == id);
+                .Include(s => s.Student)
+                .FirstOrDefaultAsync(m => m.StudentEmail == id);
             if (score == null)
             {
                 return NotFound();
@@ -44,5 +44,6 @@ namespace ExamOnline.Controllers
 
             return View(score);
         }
+
     }
 }

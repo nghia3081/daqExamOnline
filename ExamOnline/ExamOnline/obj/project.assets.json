@@ -9887,24 +9887,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nhiep\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\nhiep\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nhiep\\Music\\repos\\DAQ_ExamOnl\\ExamOnline\\ExamOnline\\ExamOnline.csproj",
+      "projectUniqueName": "C:\\Users\\nhiep\\Music\\repos\\daqExamOnline\\ExamOnline\\ExamOnline\\ExamOnline.csproj",
       "projectName": "ExamOnline",
-      "projectPath": "C:\\Users\\nhiep\\Music\\repos\\DAQ_ExamOnl\\ExamOnline\\ExamOnline\\ExamOnline.csproj",
+      "projectPath": "C:\\Users\\nhiep\\Music\\repos\\daqExamOnline\\ExamOnline\\ExamOnline\\ExamOnline.csproj",
       "packagesPath": "C:\\Users\\nhiep\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nhiep\\Music\\repos\\DAQ_ExamOnl\\ExamOnline\\ExamOnline\\obj\\",
+      "outputPath": "C:\\Users\\nhiep\\Music\\repos\\daqExamOnline\\ExamOnline\\ExamOnline\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\nhiep\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

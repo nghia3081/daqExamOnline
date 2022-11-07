@@ -52,7 +52,7 @@ namespace ExamOnline.Models
 
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.Accounts)
-                    .HasForeignKey(d => d.RoleId)
+                    .HasForeignKey(d => d.RoleId).OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__account__role_id__38996AB5");
             });
 
@@ -69,10 +69,9 @@ namespace ExamOnline.Models
                     .HasColumnName("content");
 
                 entity.Property(e => e.QuestionId).HasColumnName("question_id");
-
                 entity.HasOne(d => d.Question)
                     .WithMany(p => p.Answers)
-                    .HasForeignKey(d => d.QuestionId)
+                    .HasForeignKey(d => d.QuestionId).OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__answer__question__46E78A0C");
             });
 
@@ -108,30 +107,12 @@ namespace ExamOnline.Models
                 entity.Property(e => e.Content)
                     .HasColumnType("ntext")
                     .HasColumnName("content");
-
                 entity.Property(e => e.ExamId).HasColumnName("exam_id");
-
+                entity.Property(e => e.RightAnswer).HasColumnName("right_answer");
                 entity.HasOne(d => d.Exam)
                     .WithMany(p => p.Questions)
-                    .HasForeignKey(d => d.ExamId)
+                    .HasForeignKey(d => d.ExamId).OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__question__exam_i__440B1D61");
-
-                entity.HasMany(d => d.AnswersNavigation)
-                    .WithMany(p => p.Questions)
-                    .UsingEntity<Dictionary<string, object>>(
-                        "QuestionAnswer",
-                        l => l.HasOne<Answer>().WithMany().HasForeignKey("AnswerId").OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("FK__question___answe__4AB81AF0"),
-                        r => r.HasOne<Question>().WithMany().HasForeignKey("QuestionId").OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("FK__question___quest__49C3F6B7"),
-                        j =>
-                        {
-                            j.HasKey("QuestionId", "AnswerId").HasName("PK__question__BDF531780F817AF6");
-
-                            j.ToTable("question_answer");
-
-                            j.IndexerProperty<Guid>("QuestionId").HasColumnName("question_id");
-
-                            j.IndexerProperty<Guid>("AnswerId").HasColumnName("answer_id");
-                        });
             });
 
             modelBuilder.Entity<Role>(entity =>
@@ -149,12 +130,12 @@ namespace ExamOnline.Models
 
             modelBuilder.Entity<Score>(entity =>
             {
-                entity.HasKey(e => new { e.Student, e.ExamId })
+                entity.HasKey(e => new { e.StudentEmail, e.ExamId })
                     .HasName("PK__score__63D82DC650419A15");
 
                 entity.ToTable("score");
 
-                entity.Property(e => e.Student)
+                entity.Property(e => e.StudentEmail)
                     .HasMaxLength(250)
                     .HasColumnName("student");
 
@@ -168,10 +149,10 @@ namespace ExamOnline.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__score__exam_id__4E88ABD4");
 
-                entity.HasOne(d => d.StudentNavigation)
+                entity.HasOne(d => d.Student)
                     .WithMany(p => p.Scores)
-                    .HasForeignKey(d => d.Student)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasForeignKey(d => d.StudentEmail)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__score__student__4D94879B");
             });
 
@@ -192,6 +173,7 @@ namespace ExamOnline.Models
                 entity.HasOne(d => d.Teacher)
                     .WithMany(p => p.Subjects)
                     .HasForeignKey(d => d.TeacherEmail)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__subject__teacher__3B75D760");
 
                 entity.HasMany(d => d.Exams)

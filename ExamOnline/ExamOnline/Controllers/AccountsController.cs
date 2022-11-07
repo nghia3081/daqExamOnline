@@ -22,6 +22,7 @@ namespace ExamOnline.Controllers
             _context = context;
             _webHelper = new WebHelper();
         }
+        [HttpGet]
         public IActionResult Index()
         {
             if (_webHelper.isLoggedIn()) return RedirectToAction("Index", "HomeController");
@@ -46,6 +47,11 @@ namespace ExamOnline.Controllers
             {
                 return ResponseModel.Response<string>(99, ex.Message, string.Empty);
             }
+        }
+        [HttpGet]
+        public IActionResult Logout() {
+            _webHelper.SessionRemove("username");
+            return RedirectToAction("Index", "HomeController");
         }
         private bool checkPassword(string password, string dbPassword)
         {
