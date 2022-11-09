@@ -9,17 +9,17 @@ namespace ExamOnline.Controllers
     public class ExamsController : Controller
     {
         private readonly ExamOnlineContext _context;
-        private readonly WebHelper _webHelper;
+        private WebHelper _webHelper;
 
         public ExamsController(ExamOnlineContext context)
         {
             _context = context;
-            _webHelper = new WebHelper();
+            
         }
 
         // GET: Exams
         public async Task<IActionResult> Index()
-        {
+        {_webHelper = new WebHelper(HttpContext);
             if (_webHelper.isLoggedIn()) return RedirectToAction("Index", "LoginController");
             var listExam = await _context.Exams.ToListAsync();
             return View(listExam);
@@ -73,6 +73,7 @@ namespace ExamOnline.Controllers
                 Score score = new Score();
                 score.CorrectTotal = count;
                 score.StudentEmail = _webHelper.SessionGet("username");
+                score.ExamId = Guid.Parse(examId);
                 _context.Scores.Add(score);
                 await _context.SaveChangesAsync();
                 JObject answer = new JObject()

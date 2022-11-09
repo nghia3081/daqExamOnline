@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Text.Json.Serialization;
 
 namespace ExamOnline.DTOs
 {
@@ -6,10 +8,11 @@ namespace ExamOnline.DTOs
     {
         public static JObject Response<T>(int code, string message, T data)
         {
+            JObject dataSeri = new JObject();
             var response = new JObject();
             response.Add("code", code);
             response.Add("message", message);
-            response.Add("data", data is null?null:JObject.FromObject(data));
+            response.Add("data",data.ToString());
             return response;
         }
     }

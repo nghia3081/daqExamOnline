@@ -1,38 +1,37 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text;
-
 namespace ExamOnline.Controllers
 {
     public class WebHelper : Controller
     {
         private readonly ISession _session;
-        public WebHelper()
+        public WebHelper(HttpContext context)
         {
-            _session = HttpContext.Session;
+            _session = context.Session;
         }
         public bool isAdmin()
         {
             if (!isLoggedIn()) return false;
-            string role = Encoding.UTF8.GetString(_session.Get("Role"));
+            string role = _session.GetString("role");
             return role.Equals(Common.CommonConfig.ADMIN_ROLE_ID);
         }
         public bool isLoggedIn()
-        {
-            return _session.Get("username") == null;
+        { 
+            return !string.IsNullOrEmpty(_session.GetString("username"));
         }
         public void SessionAdd(string key, string value)
         {
-            if(!string.IsNullOrEmpty(value)) _session.Set(key, Encoding.UTF8.GetBytes(value));
+            if(!string.IsNullOrEmpty(value)) _session.SetString(key,value);
         }
         public string SessionGet(string key)
         {
-            var bytes = _session.Get(key);
-            if (bytes is null) return string.Empty;
-            return Encoding.UTF8.GetString(bytes);
+            var value = _session.GetString(key);
+           
+            return string.IsNullOrEmpty(value)?string.Empty:value;
         }
         public void SessionRemove(string key)
         {
-            if (_session.TryGetValue(key, out var value)) _session.Remove(key);
+            if (!string.IsNullOrEmpty(SessionGet(key))) _session.Remove(key);
         }
     }
 }
