@@ -39,90 +39,54 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Accounts/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Accounts/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Accounts/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Accounts/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Accounts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Exams/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbXNcQ3JlYXRlLmNzaHRtbA==
+[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Exams/DoExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbXNcRG9FeGFtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Exams/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbXNcRGVsZXRlLmNzaHRtbA==
+[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Exams/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbXNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Exams/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbXNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Exams/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Scores/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvcmVzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Scores/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvcmVzXERlbGV0ZS5jc2h0bWw=
+[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Home/IndexAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleEFkbWluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Scores/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvcmVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Scores/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvcmVzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Scores/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvcmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Scores/IndexAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvcmVzXEluZGV4QWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Subjects/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdHNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Subjects/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdHNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Subjects/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdHNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Subjects/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdHNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Subjects/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-5kpzy0cnv2
+
+[C:/Users/nhiep/Music/repos/daqExamOnline/ExamOnline/ExamOnline/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-m1zm1c1rki

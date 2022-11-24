@@ -15,22 +15,25 @@ namespace ExamOnline.Controllers
     public class AccountsController : Controller
     {
         private readonly ExamOnlineContext _context;
-        private readonly WebHelper _webHelper;
+        private WebHelper _webHelper;
 
         public AccountsController(ExamOnlineContext context)
         {
             _context = context;
-            _webHelper = new WebHelper();
+
         }
         [HttpGet]
         public IActionResult Index()
         {
-            if (_webHelper.isLoggedIn()) return RedirectToAction("Index", "HomeController");
+            _webHelper = new WebHelper(HttpContext);
+            if (_webHelper.isLoggedIn()) return RedirectToAction("Index", "Home");
             return View();
         }
         [HttpPost]
-        public JObject Login(AccountDTO account)
+        public IActionResult Login(AccountDTO account)
         {
+            _webHelper = new WebHelper(HttpContext);
+            JObject response = new JObject();
             try
             {
                 if (!AccountExists(account.Email)) throw new Exception("Not found this user");
@@ -38,30 +41,35 @@ namespace ExamOnline.Controllers
                 if (checkPassword(account.Password, acc.Password))
                 {
                     _webHelper.SessionAdd("username", acc.Email);
-                    _webHelper.SessionAdd("role",acc.RoleId.ToString());
-                    return ResponseModel.Response<string>(0, string.Empty, string.Empty);
+                    _webHelper.SessionAdd("role", acc.RoleId.ToString());
+
                 }
                 else throw new Exception("Invalid username or password");
             }
             catch (Exception ex)
             {
-                return ResponseModel.Response<string>(99, ex.Message, string.Empty);
+                ViewBag.message = ex.Message;
+                return View("Index");
             }
+            return RedirectToAction("Index", "Home");
         }
         [HttpGet]
-        public IActionResult Logout() {
+        public IActionResult Logout()
+        {
+            _webHelper = new WebHelper(HttpContext);
             _webHelper.SessionRemove("username");
-            return RedirectToAction("Index", "HomeController");
+            return RedirectToAction("Index", "Home");
         }
         private bool checkPassword(string password, string dbPassword)
         {
-            string rawPass = Encoding.UTF8.GetString(Convert.FromBase64String(dbPassword));
-            return password.Equals(rawPass);
+            _webHelper = new WebHelper(HttpContext);
+            return Convert.ToBase64String(Encoding.UTF8.GetBytes(password)).Equals(dbPassword);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<JObject> Create(AccountDTO account)
         {
+            _webHelper = new WebHelper(HttpContext);
             try
             {
                 if (!_webHelper.isLoggedIn()) throw new Exception("Please reload page and log in");
@@ -70,7 +78,7 @@ namespace ExamOnline.Controllers
                 acc.Email = account.Email;
                 byte[] bytes = Encoding.UTF8.GetBytes(account.Password);
                 acc.Password = Convert.ToBase64String(bytes);
-                acc.RoleId =  Guid.Parse(Common.CommonConfig.STUDENT_ROLE_ID);
+                acc.RoleId = Guid.Parse(Common.CommonConfig.STUDENT_ROLE_ID);
                 acc = _context.Add(acc).Entity;
                 await _context.SaveChangesAsync();
                 JObject data = JObject.FromObject(acc);
@@ -87,6 +95,7 @@ namespace ExamOnline.Controllers
         [ValidateAntiForgeryToken]
         public async Task<JObject> DeleteConfirmed(string email)
         {
+            _webHelper = new WebHelper(HttpContext);
             try
             {
                 if (!_webHelper.isLoggedIn()) throw new Exception("Please reload page and log in");

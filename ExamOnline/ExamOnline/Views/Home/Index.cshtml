@@ -1,0 +1,35 @@
+﻿@model Views_Home_Index
+<div class="row">
+    <div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Take the exam now and take your score now</p>
+</div>
+</div>
+
+<div class="row">
+    <div class="card-group" style="position:relative">
+        @{
+                var subOfStu = ViewData["SubjectOfStudent"] as List<ExamOnline.Models.Subject>;
+                if (subOfStu.Count > 0)
+                {
+                    foreach (var s in subOfStu)
+                    {
+                        <div class="card">
+                            <img class="card-img-top" data-src="holder.js/100x180/" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">@s.Name</h4>
+                                <p class="card-text">@s.Teacher</p>
+                            </div>
+                        </div>
+                    }
+                } else { 
+                    <div style="position: absolute;left:50%;top:100%;transform: translate(-50%);" class="alert alert-primary" role="alert">
+                        <strong>You have not joinned any subject. Please go to 
+                            <a class="btn btn-primary" asp-action="" asp-controller=""> Subject List </a>
+                            for joinning class and take examination.
+                        </strong>
+                    </div>
+                }
+            }
+    </div>
+</div>
